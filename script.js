@@ -120,8 +120,55 @@ const characters = [
 // Use .filter() to print a new array from characters that ONLY contains characters with attack value above 5
 // console.log(characters.filter(obj => obj.attack > 5));
 
-console.log(characters);
-// console.log(characters[0].describe());
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+
+function compareObj (obj, query) {
+  const queryKeys =Object.keys(query);
+  const myArr = [];
+  for (const key in query) {
+      if (obj.hasOwnProperty(key) && obj[key] === query[key]) {
+        myArr.push(true);
+      }
+  }
+  return myArr.length === queryKeys.length;
+}
+
+function findOne(arr, query) {
+  const foo = arr.find(obj => compareObj(obj, query));
+  return !foo ? null : foo;
+}
+
+console.log(findOne(HEROES, { id: 1 }));
+// => { id: 1, name: 'Captain America', squad: 'Avengers' }
+
+console.log(findOne(HEROES, { id: 10 }));
+// => null
+
+console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
+// => null
+
+console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
+// => { id: 5, name: 'Wonder Woman', squad: 'Justice League' }
+
+console.log(findOne(HEROES, { squad: 'Justice League' }));
+// => { id: 4, name: 'Superman', squad: 'Justice League' }
+
+
+
+
+
+
+
+
 
 
 
