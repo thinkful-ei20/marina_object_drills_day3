@@ -1,7 +1,7 @@
 const loaf = {
   flour: 300,
   water: 210,
-}
+};
 
 // console.log(loaf.flour);
 // console.log(loaf['water']);
@@ -18,7 +18,7 @@ const myObj = {
   fum: true,
   quux: 'name',
   spam: 520,
-}
+};
 
 for (let key in myObj) {
   // console.log(`This is property ${key} and its value is ${myObj[key]}`);
@@ -26,7 +26,7 @@ for (let key in myObj) {
 
 const meals = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
-}
+};
 
 // console.log(meals.meals[3]);
 
@@ -35,7 +35,7 @@ const arrayOfEmployees = [
   {name: 'Mary', jobTitle: 'Front End Developer',},
   {name: 'Anna', jobTitle: 'Senior UI Developer',},
   {name: 'Chris', jobTitle: 'Owner',},
-]
+];
 
 // arrayOfEmployees.forEach(el => console.log(`${el.name} is ${el.jobTitle}.`));
 
@@ -49,15 +49,36 @@ arrayOfEmployees.forEach(obj => {
 // Check if object has property 'boss' to print an approriate message
 arrayOfEmployees.forEach(obj => {
   if ('boss' in obj) {
-    console.log(`${obj.jobTitle} ${obj.name} reports to ${obj.boss}.`);
+    // console.log(`${obj.jobTitle} ${obj.name} reports to ${obj.boss}.`);
   } else {
-    console.log(`${obj.jobTitle} ${obj.name} doesn't report to anybody.`)
+    // console.log(`${obj.jobTitle} ${obj.name} doesn't report to anybody.`)
   }
 });
 
+const cipher = {
+  a: 2,
+  b: 3,
+  c: 4,
+  d: 5,
+};
 
+function decode(str) {
+  const firstLetter = str.charAt(0);
+    if (firstLetter in cipher) {
+    return str.charAt(cipher[firstLetter] - 1);
+  } else {
+    return " ";
+  }
+}
 
+function decodeWords (str) {
+  const splitToArr = str.split(' ');
+  return splitToArr
+    .map(el => decode(el))
+    .join('');
+}
 
+console.log(decodeWords('craft block argon meter bells brown croon droop'));
 
 
 
