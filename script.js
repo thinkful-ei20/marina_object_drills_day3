@@ -37,7 +37,25 @@ const arrayOfEmployees = [
   {name: 'Chris', jobTitle: 'Owner',},
 ]
 
-arrayOfEmployees.forEach(el => console.log(`${el.name} is ${el.jobTitle}`));
+// arrayOfEmployees.forEach(el => console.log(`${el.name} is ${el.jobTitle}.`));
+
+// Add property 'boss' to all objects excluding one where property 'jobTitle' value is 'Owner'
+arrayOfEmployees.forEach(obj => {
+  if(obj.jobTitle !== 'Owner') {
+    obj.boss = 'Chris';
+  }
+});
+
+// Check if object has property 'boss' to print an approriate message
+arrayOfEmployees.forEach(obj => {
+  if ('boss' in obj) {
+    console.log(`${obj.jobTitle} ${obj.name} reports to ${obj.boss}.`);
+  } else {
+    console.log(`${obj.jobTitle} ${obj.name} doesn't report to anybody.`)
+  }
+});
+
+
 
 
 
