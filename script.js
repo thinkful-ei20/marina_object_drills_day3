@@ -3,14 +3,14 @@ const loaf = {
   water: 210,
 }
 
-console.log(loaf.flour);
-console.log(loaf['water']);
+// console.log(loaf.flour);
+// console.log(loaf['water']);
 
 loaf.hydration = function() {
   return (this.water/this.flour) * 100;
 };
 
-console.log(loaf.hydration());
+// console.log(loaf.hydration());
 
 const myObj = {
   foo: 'string',
@@ -21,7 +21,11 @@ const myObj = {
 }
 
 for (let key in myObj) {
-  console.log(`This is property ${key} and its value is ${myObj[key]}`);
+  // console.log(`This is property ${key} and its value is ${myObj[key]}`);
 }
 
+const meals = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+}
 
+console.log(meals.meals[3]);
