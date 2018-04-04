@@ -12,4 +12,16 @@ loaf.hydration = function() {
 
 console.log(loaf.hydration());
 
+const myObj = {
+  foo: 'string',
+  bar: 22,
+  fum: true,
+  quux: 'name',
+  spam: 520,
+}
+
+for (let key in myObj) {
+  console.log(`This is property ${key} and its value is ${myObj[key]}`);
+}
+
 
