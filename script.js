@@ -28,4 +28,38 @@ const meals = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
 }
 
-console.log(meals.meals[3]);
+// console.log(meals.meals[3]);
+
+const arrayOfEmployees = [
+  {name: 'Bob', jobTitle: 'Software Engineer',},
+  {name: 'Mary', jobTitle: 'Front End Developer',},
+  {name: 'Anna', jobTitle: 'Senior UI Developer',},
+  {name: 'Chris', jobTitle: 'Owner',},
+]
+
+arrayOfEmployees.forEach(el => console.log(`${el.name} is ${el.jobTitle}`));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
